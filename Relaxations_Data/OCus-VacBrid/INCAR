@@ -1,0 +1,46 @@
+SYSTEM = IrO2-110	
+
+Electronic relaxation:
+ENCUT   = 500   ! Cutoff energy for plane waves basis set in eV (determines NGX,Y,Z).
+ALGO    = Normal    !
+NELMIN  = 6         ! Minimum number of eletronic selfconsistency (SC) steps
+NELM    = 300       ! Maximum number of electronic SC steps
+NELMDL  = -8        ! Number of NON-selfconsistency steps
+EDIFF   = 1.0E-4   ! Global-break condition for the electronic SC-loop (ELM)
+AMIN    = 0.010000
+LREAL   = AUTO
+
+
+Calculation mode:
+PREC    = Normal  ! Calcululation level (Changes FFT-grids)
+ISPIN   = 2         ! spin-polarized calculations
+
+ADDGRID = .TRUE.    ! PAW flag
+LASPH   = .TRUE.    ! non-spherical elements in the PAW method
+
+Ionic relaxation:
+NSW     = 100       ! Number of ionic steps
+EDIFFG  = -0.025     ! stop if all forces are smaller than |EDIFFG|
+IBRION  = 2         ! How the Ions are moved (2 = CG)
+ISIF    = 0         ! 2 = Calculate Force and Stress, relax only atoms pos
+POTIM   = 0.50
+
+Integration over the Brillouin zone (BZ):
+ISMEAR  = 0         ! Gaussian
+SIGMA   = 0.0500
+
+DOS calculation:
+LORBIT  = 10        ! Calculate the DOS without providing the Wigner Seitz radius
+NEDOS   = 11        ! Number of points to calculate the DOS
+
+OUTCAR size:
+NWRITE  = 1         ! Determines how much information will be written in OUTCAR
+LWAVE   = .FALSE.
+LCHARG  = .FALSE.
+LVHAR = .FALSE.
+
+Key for parallel mode calculation:
+NCORE  = 5
+LPLANE = .TRUE.
+
+EOF

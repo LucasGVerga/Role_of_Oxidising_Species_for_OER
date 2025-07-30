@@ -1,0 +1,6 @@
+Automatic mesh
+0              		! number of k-points = 0 ->automatic generation scheme
+Gamma           	! fully automatic
+3	4	1	! number of divisions for the mesh in 3 directions 
+0.0	0.0	0.0	! Shift of the mesh 
+EOF
